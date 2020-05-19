@@ -37,7 +37,9 @@ class HomePage extends StatelessWidget {
         leading: getIcon(opt['icon']),
         title: Text(opt['texto']),
         trailing: Icon( Icons.arrow_forward_ios ),
-        onTap: (){},
+        onTap: (){
+          Navigator.pushNamed(buildContext, opt['ruta']);
+        },
       );
       opciones..add(tempWidget)
               ..add(Divider());
