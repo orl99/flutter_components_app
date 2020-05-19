@@ -7,16 +7,53 @@ class CardPage extends StatelessWidget{
         title: Text('Cards')
       ),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(10),
         children: <Widget>[
-          _cardComponets()
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
+          _cardComponets(),
+          SizedBox(height: 30),
+          _cardType2(),
+          SizedBox(height: 30),
         ],
       ),
     );
   }
 
-  _cardComponets(){
+  Widget _cardComponets(){
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(25.0) ),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -34,6 +71,39 @@ class CardPage extends StatelessWidget{
         ],
       )
     );
+  }
+
+  Widget _cardType2() {
+      final containerCard = Container(
+        child: Column(
+          children: <Widget>[
+            FadeInImage(
+              image: NetworkImage('https://images.alphacoders.com/103/thumb-1920-1039414.png'),
+              placeholder: AssetImage('assets/original.gif'),
+              fadeInDuration: Duration(milliseconds: 200),
+              height: 250.0,
+              fit: BoxFit.cover
+            ),
+            Text('no tengo idea ajajjajaja')
+          ],
+        ),
+      );
+
+      return Container(
+        child: ClipRRect(child: containerCard, borderRadius: BorderRadius.circular(30.0),),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 10.0,
+              spreadRadius: 2.0,
+              offset: Offset(2.0, 10.0)
+            )
+          ]
+        ),
+      );
   }
 
 }
