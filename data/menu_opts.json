@@ -22,8 +22,13 @@
         },
         {
             "ruta": "inputPage",
-            "icon": "donut_large",
+            "icon": "input",
             "texto": "Inputs"
+        },
+        {
+            "ruta": "sliderPage",
+            "icon": "tune",
+            "texto": "Slider - Chcks"
         }
     ]
 }
