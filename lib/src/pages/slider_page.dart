@@ -9,6 +9,7 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   double _sliderValState = 100.0;
+  bool _cheackBoxState = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +21,7 @@ class _SliderPageState extends State<SliderPage> {
         child: Column(
           children: <Widget>[
             _createSliderW(),
+            _cheackBoxW(),
             Expanded(child: _imageW())
           ],
         ),
@@ -33,7 +35,7 @@ class _SliderPageState extends State<SliderPage> {
       max: 400.0,
       activeColor: Colors.indigoAccent,
       label: this._sliderValState.toString(),
-      onChanged: (value){
+      onChanged: (this._cheackBoxState) ? null : (value){
         setState(() {
           this._sliderValState = value;
         });
@@ -47,5 +49,17 @@ class _SliderPageState extends State<SliderPage> {
       width: this._sliderValState,
       fit: BoxFit.contain,
     );
+  }
+
+  Widget _cheackBoxW() {
+    return CheckboxListTile(
+      value: this._cheackBoxState, 
+      title: Text('Desactivar'),
+      onChanged: (value) {
+        setState(() {
+          this._cheackBoxState = value;
+        });
+      },
+      );
   }
 }
